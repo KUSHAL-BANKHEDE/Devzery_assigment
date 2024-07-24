@@ -43,3 +43,71 @@ The Devzery Test Case Management App is a web application designed to manage tes
    ```bash
    git clone <repository-url>
    cd <repository-directory>
+
+### Backend Setup
+
+1. **Navigate to the backend directory:**
+
+    ```bash
+    cd backend
+    ```
+
+2. **Build and start the Docker containers:**
+
+    ```bash
+    docker-compose up --build
+    ```
+
+3. **Run the Flask migration commands:**
+
+    ```bash
+    docker-compose exec web flask db upgrade
+    ```
+
+### Frontend Setup
+
+1. **Navigate to the frontend directory:**
+
+    ```bash
+    cd frontend
+    ```
+
+2. **Install the dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3. **Start the React development server:**
+
+    ```bash
+    npm start
+    ```
+
+### Access the Application
+
+- The frontend should be accessible at [http://localhost:3000](http://localhost:3000).
+- The backend API is running at [http://127.0.0.1:5000/](http://127.0.0.1:5000/).
+
+## API Endpoints
+
+- **GET /api/testcases** - Retrieve all test cases.
+- **POST /api/testcases** - Add a new test case.
+- **PUT /api/testcases/<id>** - Update an existing test case.
+- **DELETE /api/testcases/<id>** - Delete a test case.
+
+## Docker Setup
+
+The `docker-compose.yml` file sets up the following services:
+
+- **db**: PostgreSQL database.
+- **adminer**: Web-based database management tool.
+
+## Configuration
+
+- **Backend Configuration**: Located in `backend/config.py`.
+- **Frontend Configuration**: API endpoints are specified in the Axios calls in the frontend React components.
+
+## Contributing
+
+Contributions are welcome! Please submit a pull request with your changes or open an issue to discuss any problems or suggestions.
